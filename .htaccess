@@ -1,0 +1,19 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Set default index file
+DirectoryIndex index.html index.php
+
+# Handle PHP errors
+php_flag display_errors on
+php_value error_reporting E_ALL
+
+# Allow cross-origin requests if needed
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+</IfModule>
+
+# Prevent directory listing
+Options -Indexes
